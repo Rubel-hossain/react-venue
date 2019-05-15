@@ -1,24 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./resources/styles.css";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Header from "../src/Header/Header";
+import HeaderSlider from "../src/HeaderSlider/HeaderSlider";
+import VenuInfo from "../src/VenuInfo/VenuInfo";
+import Highlight from "../src/Highlight/Highlight";
+import Pricing from "../src/Pricing/Pricing";
+import Footer from "../src/Footer/Footer";
+
+import { Element } from "react-scroll";
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Header/>
+     <Element name="header_slider">
+       <HeaderSlider/>
+     </Element>
+     <Element name="venu_info">
+       <VenuInfo/>
+     </Element>
+     <Element name="highlight">
+       <Highlight/>
+     </Element>
+     <Element name="pricing">
+       <Pricing/>
+     </Element>
+     <Element name="footer">
+       <Footer/>
+     </Element>
+     
     </div>
   );
 }
